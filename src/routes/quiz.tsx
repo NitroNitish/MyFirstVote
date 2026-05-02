@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import { JourneyProgress } from "@/components/JourneyProgress";
 import { Confetti } from "@/components/Confetti";
 import { QUESTIONS, categoryLabels, shuffle, type Question } from "@/lib/quiz-data";
