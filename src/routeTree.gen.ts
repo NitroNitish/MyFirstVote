@@ -9,38 +9,128 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as ProcessRouteImport } from './routes/process'
+import { Route as CertificateRouteImport } from './routes/certificate'
+import { Route as BallotRouteImport } from './routes/ballot'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as QuizResultRouteImport } from './routes/quiz.result'
 
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificateRoute = CertificateRouteImport.update({
+  id: '/certificate',
+  path: '/certificate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BallotRoute = BallotRouteImport.update({
+  id: '/ballot',
+  path: '/ballot',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuizResultRoute = QuizResultRouteImport.update({
+  id: '/result',
+  path: '/result',
+  getParentRoute: () => QuizRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ballot': typeof BallotRoute
+  '/certificate': typeof CertificateRoute
+  '/process': typeof ProcessRoute
+  '/quiz': typeof QuizRouteWithChildren
+  '/quiz/result': typeof QuizResultRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ballot': typeof BallotRoute
+  '/certificate': typeof CertificateRoute
+  '/process': typeof ProcessRoute
+  '/quiz': typeof QuizRouteWithChildren
+  '/quiz/result': typeof QuizResultRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ballot': typeof BallotRoute
+  '/certificate': typeof CertificateRoute
+  '/process': typeof ProcessRoute
+  '/quiz': typeof QuizRouteWithChildren
+  '/quiz/result': typeof QuizResultRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ballot'
+    | '/certificate'
+    | '/process'
+    | '/quiz'
+    | '/quiz/result'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/ballot' | '/certificate' | '/process' | '/quiz' | '/quiz/result'
+  id:
+    | '__root__'
+    | '/'
+    | '/ballot'
+    | '/certificate'
+    | '/process'
+    | '/quiz'
+    | '/quiz/result'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BallotRoute: typeof BallotRoute
+  CertificateRoute: typeof CertificateRoute
+  ProcessRoute: typeof ProcessRoute
+  QuizRoute: typeof QuizRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certificate': {
+      id: '/certificate'
+      path: '/certificate'
+      fullPath: '/certificate'
+      preLoaderRoute: typeof CertificateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ballot': {
+      id: '/ballot'
+      path: '/ballot'
+      fullPath: '/ballot'
+      preLoaderRoute: typeof BallotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +138,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quiz/result': {
+      id: '/quiz/result'
+      path: '/result'
+      fullPath: '/quiz/result'
+      preLoaderRoute: typeof QuizResultRouteImport
+      parentRoute: typeof QuizRoute
+    }
   }
 }
 
+interface QuizRouteChildren {
+  QuizResultRoute: typeof QuizResultRoute
+}
+
+const QuizRouteChildren: QuizRouteChildren = {
+  QuizResultRoute: QuizResultRoute,
+}
+
+const QuizRouteWithChildren = QuizRoute._addFileChildren(QuizRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BallotRoute: BallotRoute,
+  CertificateRoute: CertificateRoute,
+  ProcessRoute: ProcessRoute,
+  QuizRoute: QuizRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
