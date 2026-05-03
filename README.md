@@ -103,6 +103,7 @@ Every election, millions of Indian youth turn 18 and become eligible to vote —
 | **Development** | **Antigravity AI** (Pair Programming) |
 | **Prototyping** | **Google AI Studio** & **Stitch** |
 | **Multilingual** | **Google Translate** |
+| **Testing** | **Vitest** & **React Testing Library** |
 | Build Tool | Vite 7 |
 
 ---
@@ -238,7 +239,40 @@ VITE_OPENROUTER_API_KEY=your_openrouter_api_key
 | **Stitch (StitchMCP)** | Facilitated high-fidelity UI design and component prototyping, ensuring a world-class user experience. |
 | **Google Translate** | Provides instant multilingual accessibility, ensuring every citizen can learn in their native language. |
 
-The Google AI ecosystem was chosen because it provides the most comprehensive and high-performance toolset for building civic-tech applications at scale.
+---
+
+## ☁️ Google Cloud & AI Ecosystem Integration
+
+This project is built from the ground up to leverage the full power of the Google Cloud Ecosystem:
+
+- **Google Cloud Run**: Managed compute platform for deploying the containerized application at scale.
+- **Google Cloud Build**: Automated CI/CD pipeline for building and deploying container images.
+- **Google Secret Manager**: Securely stores sensitive API keys (OpenRouter, Supabase) and project configurations.
+- **Google Artifact Registry**: Private repository for managing Docker container images.
+- **Google Gemini 2.0 Flash**: The core "brain" behind our context-aware election assistant.
+- **Google AI Studio**: Primary prototyping environment for prompt engineering and model optimization.
+- **Google Translate**: Dynamic i18n layer providing site-wide accessibility in native Indian languages.
+- **Google Fonts**: Leveraging modern typography (Inter, Outfit) for a premium reading experience.
+
+---
+
+## 🧪 Testing & Quality Assurance
+
+The project includes a robust testing suite built with **Vitest** and **React Testing Library** to ensure reliability and maintainability.
+
+### Running Tests
+```bash
+# Run unit and component tests
+npm test
+
+# Run tests in UI mode
+npm run test:ui (requires @vitest/ui)
+```
+
+### Coverage
+- **Component Tests**: Verifies rendering and interaction logic for UI components (e.g., `Confetti`).
+- **Logic Tests**: Validates core business logic and state management (e.g., `journey` progress).
+- **Mocking**: Comprehensive mocking of browser APIs like `localStorage` and `fetch`.
 
 ---
 
