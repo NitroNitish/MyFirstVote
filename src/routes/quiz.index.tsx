@@ -6,7 +6,7 @@ import { QUESTIONS, categoryLabels, shuffle, type Question } from "@/lib/quiz-da
 import { setProgress } from "@/lib/journey";
 import ballotArt from "@/assets/ballot-logo.png";
 
-export const Route = createFileRoute("/quiz")({
+export const Route = createFileRoute("/quiz/")({
   head: () => ({
     meta: [
       { title: "Election Quiz · MyFirstVote" },
