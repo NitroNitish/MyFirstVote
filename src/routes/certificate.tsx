@@ -132,6 +132,7 @@ function CertPage() {
   const shareUrl = typeof window !== "undefined" ? window.location.origin : "https://myfirstvote.in";
   const wa = `https://wa.me/?text=${encodeURIComponent(`I just completed MyFirstVote and I'm voting-ready! 🗳️ Learn to vote in 10 minutes: ${shareUrl}`)}`;
   const tw = `https://twitter.com/intent/tweet?text=${encodeURIComponent("Proud to be a Voting Champion! 🏆 Just completed MyFirstVote — learned everything about voting in India. Your turn! 🇮🇳 #FirstTimeVoter")}&url=${encodeURIComponent(shareUrl)}`;
+  const calUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Election Day - Cast Your Vote 🗳️")}&dates=20250520T023000Z/20250520T123000Z&details=${encodeURIComponent("Reminder from MyFirstVote.in. Don't forget to carry your voter ID and cast your vote! Check your booth at voters.eci.gov.in")}&location=Your+Polling+Booth&sf=true&output=xml`;
 
   return (
     <div className="min-h-screen bg-cream pb-12">
@@ -200,6 +201,15 @@ function CertPage() {
           >
             🔗 Copy Link
           </button>
+          <a
+            href={calUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center gap-2 rounded-xl border-2 border-[#4285F4] bg-white px-5 py-3.5 font-display font-bold text-[#4285F4] transition hover:bg-[#4285F4]/5 sm:col-span-2"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+            Sync to Google Calendar
+          </a>
         </div>
 
         {/* Next steps */}

@@ -238,6 +238,7 @@ VITE_OPENROUTER_API_KEY=your_openrouter_api_key
 | **Antigravity** | The agentic AI coding assistant used for the entire development lifecycle, from architecture to implementation. |
 | **Stitch (StitchMCP)** | Facilitated high-fidelity UI design and component prototyping, ensuring a world-class user experience. |
 | **Google Translate** | Provides instant multilingual accessibility, ensuring every citizen can learn in their native language. |
+| **Google Calendar** | Enables users to set one-click reminders for election day, increasing voter turnout through timely notifications. |
 
 ---
 
@@ -252,6 +253,7 @@ This project is built from the ground up to leverage the full power of the Googl
 - **Google Gemini 2.0 Flash**: The core "brain" behind our context-aware election assistant.
 - **Google AI Studio**: Primary prototyping environment for prompt engineering and model optimization.
 - **Google Translate**: Dynamic i18n layer providing site-wide accessibility in native Indian languages.
+- **Google Calendar**: Integrated "Sync to Calendar" feature for election day reminders and civic participation.
 - **Google Fonts**: Leveraging modern typography (Inter, Outfit) for a premium reading experience.
 
 ---
