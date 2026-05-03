@@ -26,6 +26,9 @@ dist-ssr
 .env.local
 !.env.example
 
+# Deployment scripts (contain secrets)
+deploy-setup.ps1
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
