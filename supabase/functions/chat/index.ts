@@ -1,4 +1,4 @@
-// Edge function: streams chat completions via Lovable AI Gateway
+// Edge function: streams chat completions via OpenRouter (Google Gemini 2.0 Flash)
 // CORS-enabled, public (no JWT verify).
 
 const corsHeaders = {
