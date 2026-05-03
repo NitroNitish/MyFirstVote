@@ -88,13 +88,13 @@ function ProcessPage() {
     <div className="min-h-screen bg-cream">
       <JourneyProgress current={2} sublabel="Voting Process" />
 
-      <main className="mx-auto max-w-3xl px-4 py-10">
+      <main className="mx-auto max-w-3xl px-3 py-8 sm:px-4 sm:py-10">
         <header className="text-center">
           <div className="text-5xl">🗳️</div>
-          <h1 className="mt-3 font-display text-3xl font-extrabold text-navy sm:text-4xl">
+          <h1 className="mt-3 font-display text-2xl font-extrabold text-navy sm:text-4xl">
             Here's How to Cast Your First Vote
           </h1>
-          <p className="mt-2 text-muted-foreground">Follow these simple steps to vote with confidence.</p>
+          <p className="mt-2 text-sm text-muted-foreground">Follow these simple steps to vote with confidence.</p>
         </header>
 
         {/* Timeline */}

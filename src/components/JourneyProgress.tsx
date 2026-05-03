@@ -36,21 +36,21 @@ export function JourneyProgress({
     <header className="bg-background">
       {/* Top dark navy bar with logo + language */}
       <div className="bg-navy text-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link to="/" className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-3 sm:px-6 sm:py-4">
+          <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
             <img
               src={logo}
               alt="MyFirstVote logo"
               width={48}
               height={48}
-              className="h-12 w-12 object-contain"
+              className="h-9 w-9 flex-shrink-0 object-contain sm:h-12 sm:w-12"
             />
-            <div className="leading-tight">
-              <div className="font-display text-2xl font-extrabold tracking-tight">
+            <div className="min-w-0 leading-tight">
+              <div className="font-display text-lg font-extrabold tracking-tight sm:text-2xl">
                 <span className="text-white">My</span>
                 <span className="text-saffron">FirstVote</span>
               </div>
-              <div className="text-xs font-medium text-white/70">
+              <div className="hidden text-xs font-medium text-white/70 sm:block">
                 Your Voice, Your Democracy
               </div>
             </div>
@@ -58,10 +58,10 @@ export function JourneyProgress({
 
           <button
             type="button"
-            className="flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-3 py-2 text-sm font-medium text-white transition hover:bg-white/10"
+            className="flex flex-shrink-0 items-center gap-1 rounded-lg border border-white/20 bg-white/5 px-2.5 py-1.5 text-xs font-medium text-white transition hover:bg-white/10 sm:gap-2 sm:px-3 sm:py-2 sm:text-sm"
           >
             <span aria-hidden>🌐</span>
-            English
+            <span className="hidden xs:inline sm:inline">English</span>
             <span aria-hidden className="text-xs opacity-70">▾</span>
           </button>
         </div>
@@ -92,21 +92,23 @@ export function JourneyProgress({
           className="pointer-events-none absolute -left-10 top-1/2 hidden h-40 w-40 -translate-y-1/2 rounded-full border-[6px] border-sky/15 sm:block"
         />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-6">
-          <div className="flex items-start justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-navy text-white shadow-card">
+        <div className="relative mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-6">
+          <div className="flex items-start justify-between gap-3 sm:gap-6">
+            <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+              <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-navy text-white shadow-card sm:h-11 sm:w-11">
                 {current === 1 && <QuizIcon />}
                 {current === 2 && <ProcessIcon />}
                 {current === 3 && <VoteIcon />}
                 {current === 4 && <TrophyIcon />}
               </div>
-              <div>
-                <div className="font-display text-xl font-extrabold text-navy sm:text-2xl">
-                  Step {current} of 4: {STEP_LABELS[current]}
+              <div className="min-w-0">
+                <div className="font-display text-sm font-extrabold leading-tight text-navy sm:text-2xl">
+                  <span className="sm:hidden">Step {current}/4</span>
+                  <span className="hidden sm:inline">Step {current} of 4: {STEP_LABELS[current]}</span>
                 </div>
+                <div className="text-xs font-medium text-saffron sm:hidden">{STEP_LABELS[current]}</div>
                 {sublabel && (
-                  <div className="mt-0.5 text-xs font-medium text-muted-foreground">
+                  <div className="mt-0.5 hidden text-xs font-medium text-muted-foreground sm:block">
                     {sublabel}
                   </div>
                 )}
@@ -114,11 +116,11 @@ export function JourneyProgress({
             </div>
 
             {score && (
-              <div className="text-right">
-                <div className="font-display text-3xl font-extrabold text-saffron sm:text-4xl">
+              <div className="flex-shrink-0 text-right">
+                <div className="font-display text-2xl font-extrabold text-saffron sm:text-4xl">
                   {score}
                 </div>
-                <div className="text-xs font-medium text-muted-foreground">
+                <div className="text-[10px] font-medium text-muted-foreground sm:text-xs">
                   {scoreLabel}
                 </div>
               </div>
