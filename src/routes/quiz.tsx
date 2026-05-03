@@ -67,7 +67,7 @@ function QuizPage() {
       />
       {showConfetti && <Confetti />}
 
-      <main className="relative mx-auto max-w-7xl px-6 py-12">
+      <main className="relative mx-auto max-w-7xl px-3 py-6 sm:px-6 sm:py-12">
         {/* Decorative dotted clusters */}
         <DotCluster className="absolute left-4 top-16 hidden md:block" />
         <DotCluster className="absolute right-4 top-16 hidden md:block" />
@@ -82,7 +82,7 @@ function QuizPage() {
         <div className="mx-auto max-w-3xl">
           <div
             key={q.id}
-            className={`animate-scale-in rounded-3xl border border-border bg-card p-8 shadow-card sm:p-10 ${
+            className={`animate-scale-in rounded-2xl border border-border bg-card p-5 shadow-card sm:rounded-3xl sm:p-10 ${
               shake ? "animate-shake" : ""
             }`}
           >
@@ -94,11 +94,11 @@ function QuizPage() {
               </span>
             </div>
 
-            <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight text-navy sm:text-4xl">
+            <h1 className="mt-4 font-display text-xl font-extrabold leading-tight text-navy sm:mt-5 sm:text-4xl">
               {q.question}
             </h1>
 
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="mt-5 grid grid-cols-1 gap-3 sm:mt-8 sm:gap-4 sm:grid-cols-2">
               {q.options.map((opt, i) => {
                 const isPicked = picked === i;
                 const isAns = i === q.correct;
@@ -122,10 +122,10 @@ function QuizPage() {
                     key={i}
                     onClick={() => onPick(i)}
                     disabled={picked !== null}
-                    className={`group flex w-full items-center gap-4 rounded-2xl border-2 px-5 py-4 text-left text-base font-semibold text-navy transition ${cls}`}
+                    className={`group flex w-full items-center gap-3 rounded-xl border-2 px-3.5 py-3 text-left text-sm font-semibold text-navy transition sm:gap-4 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-base ${cls}`}
                   >
                     <span
-                      className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl text-base font-extrabold transition ${badgeCls}`}
+                      className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-sm font-extrabold transition sm:h-10 sm:w-10 sm:rounded-xl sm:text-base ${badgeCls}`}
                     >
                       {String.fromCharCode(65 + i)}
                     </span>
