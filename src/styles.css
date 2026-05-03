@@ -174,3 +174,77 @@
   background: var(--saffron); animation: pulse-ring 1.6s ease-out infinite;
   z-index: -1;
 }
+
+/* Google Translate Styling */
+.google-translate-container {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 4px 12px;
+  border-radius: 99px;
+  box-shadow: 0 4px 20px rgba(13, 27, 62, 0.15);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  min-height: 40px;
+}
+
+.google-translate-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(13, 27, 62, 0.2);
+}
+
+#google_translate_element select {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  cursor: pointer;
+  outline: none;
+}
+
+/* Hide Google's branding and ugly UI */
+.goog-te-gadget-icon, 
+.goog-te-gadget-simple img,
+.goog-te-menu-value span:nth-child(3),
+.goog-te-menu-value span:nth-child(5) {
+  display: none !important;
+}
+
+.goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.goog-te-menu-value {
+  margin: 0 !important;
+  color: var(--navy) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .google-translate-container {
+    bottom: auto;
+    top: 12px;
+    left: 12px;
+    padding: 2px 8px;
+    min-height: 32px;
+  }
+}

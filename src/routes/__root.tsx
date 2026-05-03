@@ -132,6 +132,13 @@ export const Route = createRootRoute({
         type: "application/ld+json",
         children: STRUCTURED_DATA,
       },
+      {
+        children: `function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element'); }`,
+      },
+      {
+        src: "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit",
+        async: true,
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -156,6 +163,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <>
+      <div id="google_translate_element" className="google-translate-container" />
       <Outlet />
       <ChatBot />
     </>
