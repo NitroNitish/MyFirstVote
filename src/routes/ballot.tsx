@@ -84,9 +84,9 @@ function BallotPage() {
       <JourneyProgress current={3} sublabel="Practice Voting" />
       {phase === "done" && <Confetti count={120} />}
 
-      <main className="mx-auto max-w-2xl px-4 py-8">
+      <main className="mx-auto max-w-2xl px-3 py-6 sm:px-4 sm:py-8">
         <header className="text-center">
-          <h1 className="font-display text-3xl font-extrabold text-navy">Practice Your Vote on a Real EVM</h1>
+          <h1 className="font-display text-2xl font-extrabold text-navy sm:text-3xl">Practice Your Vote on a Real EVM</h1>
           <p className="mt-2 text-sm text-muted-foreground">This is exactly how the voting machine looks. Try it!</p>
         </header>
 
@@ -116,29 +116,29 @@ function BallotPage() {
                 return (
                   <div
                     key={c.number}
-                    className={`flex items-center gap-3 border-b border-border p-3 transition last:border-b-0 sm:p-4 ${
+                    className={`flex items-center gap-2 border-b border-border p-2.5 transition last:border-b-0 sm:gap-3 sm:p-4 ${
                       dim ? "opacity-30" : ""
                     } ${isPicked && phase === "recording" ? "bg-destructive/10" : ""} ${
                       isPicked && phase === "done" ? "bg-india-green-light" : ""
                     }`}
                   >
-                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-navy text-sm font-bold text-white">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-navy text-xs font-bold text-white sm:h-9 sm:w-9 sm:text-sm">
                       {c.number}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-display text-sm font-bold text-navy sm:text-base truncate">{c.name}</div>
-                      <div className="text-xs text-muted-foreground truncate">{c.party}</div>
-                    </div>
                     <div
-                      className="hidden h-10 w-10 items-center justify-center rounded-md text-2xl text-white sm:flex"
+                      className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md text-xl text-white sm:h-10 sm:w-10 sm:text-2xl"
                       style={{ background: c.color }}
                     >
                       {c.symbol}
                     </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-display text-sm font-bold text-navy sm:text-base truncate">{c.name}</div>
+                      <div className="text-[11px] text-muted-foreground truncate sm:text-xs">{c.party}</div>
+                    </div>
                     <button
                       onClick={() => onPress(c)}
                       disabled={phase !== "ready"}
-                      className={`flex h-10 items-center gap-2 rounded-md border-2 px-3 font-mono text-xs font-bold transition ${
+                      className={`flex h-9 flex-shrink-0 items-center gap-1.5 rounded-md border-2 px-2.5 font-mono text-[10px] font-bold transition sm:h-10 sm:gap-2 sm:px-3 sm:text-xs ${
                         phase === "ready"
                           ? "border-saffron bg-saffron-light text-navy hover:bg-saffron hover:text-white active:scale-95"
                           : "border-border bg-muted text-muted-foreground"

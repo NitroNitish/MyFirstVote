@@ -137,10 +137,10 @@ function CertPage() {
     <div className="min-h-screen bg-cream pb-12">
       <JourneyProgress current={4} sublabel="You're Ready!" />
 
-      <main className="mx-auto max-w-3xl px-4 py-8">
+      <main className="mx-auto max-w-3xl px-3 py-6 sm:px-4 sm:py-8">
         <header className="text-center">
           <div className="text-5xl">🏆</div>
-          <h1 className="mt-2 font-display text-3xl font-extrabold text-navy">You're a Voting Champion!</h1>
+          <h1 className="mt-2 font-display text-2xl font-extrabold text-navy sm:text-3xl">You're a Voting Champion!</h1>
           <p className="mt-1 text-sm text-muted-foreground">Personalize, download and share your certificate.</p>
         </header>
 
