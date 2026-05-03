@@ -4,7 +4,7 @@
 
 ![MyFirstVote Banner](https://img.shields.io/badge/MyFirstVote-India's%20Voting%20Guide-FF6B1A?style=for-the-badge&logo=data:image/svg+xml;base64,)
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-2D7D46?style=for-the-badge)](https://vote-ready-india.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-2D7D46?style=for-the-badge)](https://myfirstvote-r2i4zontkq-el.a.run.app)
 [![GitHub](https://img.shields.io/badge/GitHub-NitroNitish-0D1B3E?style=for-the-badge&logo=github)](https://github.com/NitroNitish/vote-ready-india)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
@@ -67,6 +67,11 @@ Every election, millions of Indian youth turn 18 and become eligible to vote —
 - Context-aware: focused on Indian elections and voting
 - Quick-reply suggestions for common questions
 
+### 🌐 6. Multilingual Support
+- Integrated **Google Translate** for instant site-wide translation
+- Supports **Hindi, Marathi, Telugu, Tamil, Kannada, Bengali**, and more
+- Premium, unobtrusive widget for seamless language switching
+
 ---
 
 ## 🏗️ Architecture & Technical Approach
@@ -80,8 +85,8 @@ Every election, millions of Indian youth turn 18 and become eligible to vote —
 │             │   Edge Fn)   │  • Gemini 2.0 Flash (AI)   │
 │  TanStack   │             │  • Google AI Studio (Proto) │
 │   Router    │   Deno RT    │  • Stitch (UI/UX)          │
-│  Tailwind   │  Functions   │  • Antigravity (Assistant) │
-│    CSS 4    │             │                            │
+│  Tailwind   │  Functions   │  • Google Translate (i18n)  │
+│    CSS 4    │             │  • Antigravity (Assistant) │
 └─────────────┴──────────────┴────────────────────────────┘
 ```
 
@@ -97,6 +102,7 @@ Every election, millions of Indian youth turn 18 and become eligible to vote —
 | Database | Supabase (PostgreSQL) |
 | **Development** | **Antigravity AI** (Pair Programming) |
 | **Prototyping** | **Google AI Studio** & **Stitch** |
+| **Multilingual** | **Google Translate** |
 | Build Tool | Vite 7 |
 
 ---
@@ -230,6 +236,7 @@ VITE_OPENROUTER_API_KEY=your_openrouter_api_key
 | **Google AI Studio** | Used for rapid prototyping and fine-tuning the chatbot's system instructions and personality. |
 | **Antigravity** | The agentic AI coding assistant used for the entire development lifecycle, from architecture to implementation. |
 | **Stitch (StitchMCP)** | Facilitated high-fidelity UI design and component prototyping, ensuring a world-class user experience. |
+| **Google Translate** | Provides instant multilingual accessibility, ensuring every citizen can learn in their native language. |
 
 The Google AI ecosystem was chosen because it provides the most comprehensive and high-performance toolset for building civic-tech applications at scale.
 
@@ -268,7 +275,7 @@ vote-ready-india/
 ## 🎪 Assumptions Made
 
 1. **Target audience**: First-time voters aged 18-25 in India with basic smartphone/internet access
-2. **Language**: English-first (Hindi and regional languages planned for future versions)
+2. **Language**: Native multilingual support (Hindi, Marathi, etc.) via **Google Translate**
 3. **Connectivity**: Assumes basic internet for the AI chatbot; all other features work offline
 4. **Data freshness**: Candidate data in the EVM simulator is fictional/representative (real candidates change per election)
 5. **ECI Accuracy**: All factual information is based on official ECI guidelines as of 2024-2025
@@ -289,7 +296,6 @@ vote-ready-india/
 
 ## 🌟 Future Roadmap
 
-- [ ] **Hindi & regional language support** (leveraging Gemini's multilingual capabilities)
 - [ ] **State-specific election data** (dynamic candidate lists based on user's state)
 - [ ] **Voter registration status checker** (via ECI API integration)
 - [ ] **Polling booth finder** (Google Maps integration)
@@ -310,6 +316,6 @@ MIT License — Free to use, share, and build upon.
 
 _Every vote counts. Every voice matters. Be the change._
 
-[🗳️ Start Your Journey](https://vote-ready-india.vercel.app) | [📂 GitHub](https://github.com/NitroNitish/vote-ready-india)
+[🗳️ Start Your Journey](https://myfirstvote-r2i4zontkq-el.a.run.app) | [📂 GitHub](https://github.com/NitroNitish/vote-ready-india)
 
 </div>

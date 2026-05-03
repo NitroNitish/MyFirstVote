@@ -243,7 +243,8 @@ body {
   .google-translate-container {
     bottom: auto;
     top: 12px;
-    left: 12px;
+    right: 12px;
+    left: auto;
     padding: 2px 8px;
     min-height: 32px;
   }
