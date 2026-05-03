@@ -78,9 +78,9 @@ Every election, millions of Indian youth turn 18 and become eligible to vote —
 │   Frontend  │   Backend    │      Google Services        │
 │   (React)   │  (Supabase   │                            │
 │             │   Edge Fn)   │  • Gemini 2.0 Flash (AI)   │
-│  TanStack   │             │  • OpenRouter API Gateway   │
-│   Router    │   Deno RT    │                            │
-│  Tailwind   │  Functions   │                            │
+│  TanStack   │             │  • Google AI Studio (Proto) │
+│   Router    │   Deno RT    │  • Stitch (UI/UX)          │
+│  Tailwind   │  Functions   │  • Antigravity (Assistant) │
 │    CSS 4    │             │                            │
 └─────────────┴──────────────┴────────────────────────────┘
 ```
@@ -92,13 +92,24 @@ Every election, millions of Indian youth turn 18 and become eligible to vote —
 | Framework | **TanStack Start** (React 19, SSR-capable) |
 | Routing | TanStack Router (file-based) |
 | Styling | **Tailwind CSS v4** with custom design tokens |
-| UI Components | Radix UI primitives |
-| AI Integration | **Google Gemini 2.0 Flash** via OpenRouter |
+| AI Integration | **Google Gemini 2.0 Flash** (via OpenRouter) |
 | Backend | Supabase Edge Functions (Deno) |
 | Database | Supabase (PostgreSQL) |
-| State | React hooks + localStorage persistence |
+| **Development** | **Antigravity AI** (Pair Programming) |
+| **Prototyping** | **Google AI Studio** & **Stitch** |
 | Build Tool | Vite 7 |
-| Deployment | Vercel / Cloudflare Workers |
+
+---
+
+## 🛠️ Development Workflow: Powered by Google AI
+
+This project was built using a cutting-edge development workflow centered around the Google AI ecosystem:
+
+1.  **AI-First Development**: Leveraged **Antigravity**, a powerful agentic AI coding assistant, to architect the project, generate complex React components, and ensure high code quality through pair programming.
+2.  **Rapid Prototyping with AI Studio**: Used **Google AI Studio** to iterate on the AI Assistant's system prompts, ensuring the chatbot provides accurate, context-aware, and helpful guidance for Indian voters.
+3.  **UI/UX Excellence with Stitch**: Utilized **Stitch (StitchMCP)** to prototype the design system and UI components, ensuring a premium, modern, and highly accessible user interface that resonates with first-time voters.
+4.  **The Gemini Core**: **Gemini 2.0 Flash** serves as the project's brain, not just in the final product but as a technical consultant throughout the build process.
+
 
 ---
 
@@ -211,18 +222,16 @@ VITE_OPENROUTER_API_KEY=your_openrouter_api_key
 
 ---
 
-## 📊 Google Services Integration
+## 📊 Google Services & AI Ecosystem Integration
 
-| Service | How It's Used |
-|---------|--------------|
-| **Google Gemini 2.0 Flash** | Powers the AI election assistant chatbot — provides accurate, fast responses about Indian elections |
-| **OpenRouter AI Gateway** | Routes requests to Google's Gemini model with streaming support |
+| Service / Tool | Role in Project |
+|----------------|-----------------|
+| **Google Gemini 2.0 Flash** | Powers the core AI Assistant — providing accurate, low-latency, and context-aware responses about Indian elections. |
+| **Google AI Studio** | Used for rapid prototyping and fine-tuning the chatbot's system instructions and personality. |
+| **Antigravity** | The agentic AI coding assistant used for the entire development lifecycle, from architecture to implementation. |
+| **Stitch (StitchMCP)** | Facilitated high-fidelity UI design and component prototyping, ensuring a world-class user experience. |
 
-The Gemini model was chosen specifically for its:
-- Deep knowledge of Indian governance and electoral processes
-- Fast inference speed (critical for streaming UX)
-- Multilingual capability (for future Hindi/regional language support)
-- Cost-efficiency for a free public service
+The Google AI ecosystem was chosen because it provides the most comprehensive and high-performance toolset for building civic-tech applications at scale.
 
 ---
 

@@ -1,37 +1,22 @@
 # Stage 1: Build
-FROM node:20-alpine AS builder
-
+FROM node:22-slim AS builder
 WORKDIR /app
-
-# Copy package files
-COPY package.json package-lock.json ./
-
-# Install all dependencies
-RUN npm ci
-
-# Copy source code
+COPY package*.json ./
+RUN npm install
 COPY . .
-
-# Build the application
 RUN npm run build
 
-# Stage 2: Production runtime
-FROM node:20-alpine AS runner
-
+# Stage 2: Production
+FROM node:22-slim
 WORKDIR /app
-
-# Only copy what's needed to run
+COPY package*.json ./
+RUN npm install --omit=dev
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
-# srvx serves static files from 'public' directory by default
-RUN cp -r dist/client public
+COPY prod-server.mjs .
 
-# Cloud Run uses PORT env variable
 ENV PORT=8080
 ENV NODE_ENV=production
 
 EXPOSE 8080
 
-# Start the server using the start script in package.json
-CMD ["npm", "start"]
+CMD ["node", "prod-server.mjs"]

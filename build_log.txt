@@ -1,0 +1,53 @@
+﻿
+> build
+> vite build
+
+[36mvite v7.3.2 [32mbuilding client environment for production...[36m[39m
+transforming...
+node.exe : Found 1 warning while optimizing generated CSS:
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Found 1 warning... generated CSS::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+[2mΓöé   initial-value: 0;[22m
+[2mΓöé }[22m
+[2mΓöé[22m @import 
+url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+[2mΓöå[22m        [33m[2m^--[22m @import rules must precede all rules aside from @charset and @layer 
+statements[39m
+[2mΓöå[22m
+[2mΓöé :root {[22m
+[2mΓöé   --radius: 0.75rem;[22m
+
+[32mΓ£ô[39m 151 modules transformed.
+[31mΓ£ù[39m Build failed in 2.36s
+[31merror during build:
+[31m[vite:esbuild] Transform failed with 1 error:
+C:/Users/nitis_rk4w6c0/OneDrive/Desktop/Projects/MyFirstVote/src/components/ChatBot.tsx:1:1: ERROR: Expected ";" but 
+found ":"[31m
+file: [36mC:/Users/nitis_rk4w6c0/OneDrive/Desktop/Projects/MyFirstVote/src/components/ChatBot.tsx:1:1[31m
+[33m
+[33mExpected ";" but found ":"[33m
+1  |  1: import { useState, useRef, useEffect } from "react";
+   |   ^
+2  |  2: import { chatAction } from "../lib/chat-action";
+3  |  
+[31m
+    at failureErrorWithLog (C:\Users\nitis_rk4w6c0\OneDrive\Desktop\Projects\MyFirstVote\node_modules\vite\node_modules
+\esbuild\lib\main.js:1748:15)
+    at 
+C:\Users\nitis_rk4w6c0\OneDrive\Desktop\Projects\MyFirstVote\node_modules\vite\node_modules\esbuild\lib\main.js:1017:50
+    at responseCallbacks.<computed> 
+(C:\Users\nitis_rk4w6c0\OneDrive\Desktop\Projects\MyFirstVote\node_modules\vite\node_modules\esbuild\lib\main.js:884:9)
+    at handleIncomingPacket (C:\Users\nitis_rk4w6c0\OneDrive\Desktop\Projects\MyFirstVote\node_modules\vite\node_module
+s\esbuild\lib\main.js:939:12)
+    at Socket.readFromStdout 
+(C:\Users\nitis_rk4w6c0\OneDrive\Desktop\Projects\MyFirstVote\node_modules\vite\node_modules\esbuild\lib\main.js:862:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)[39m

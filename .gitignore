@@ -8,8 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+# Build artifacts
+public/assets
 dist
-dist-ssr
 .output
 .vinxi
 .tanstack/**
