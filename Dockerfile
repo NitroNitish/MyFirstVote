@@ -31,5 +31,5 @@ ENV NODE_ENV=production
 
 EXPOSE 8080
 
-# Start the server using srvx (h3 runtime)
-CMD ["npx", "srvx", "dist/server/server.js", "--port", "8080", "--prod"]
+# Start the server using the start script in package.json
+CMD ["npm", "start"]
