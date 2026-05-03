@@ -38,21 +38,30 @@ export function ChatBot() {
       return;
     }
 
+    const OPENROUTER_KEY = import.meta.env.VITE_OPENROUTER_API_KEY as string | undefined;
+
     try {
-      const res = await fetch(`${SUPABASE_URL}/functions/v1/chat`, {
+      const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${SUPABASE_KEY ?? ""}`,
+          Authorization: `Bearer ${OPENROUTER_KEY ?? ""}`,
+          "HTTP-Referer": window.location.origin,
+          "X-Title": "Vote Ready India",
         },
         body: JSON.stringify({
-          messages: next.map((m) => ({ role: m.role, content: m.content })),
+          model: "google/gemini-2.0-flash-001",
+          messages: [
+            { role: "system", content: "You are a friendly election guide for first-time voters in India. Give accurate, simple, encouraging answers about voting in India. Cite ECI when relevant. Keep answers under 3-4 short sentences." },
+            ...next.map((m) => ({ role: m.role, content: m.content }))
+          ],
+          stream: true,
         }),
       });
 
       if (!res.ok || !res.body) {
-        if (res.status === 429) throw new Error("Too many requests — try again in a minute.");
-        if (res.status === 402) throw new Error("AI credits exhausted.");
+        if (res.status === 401) throw new Error("Invalid API Key.");
+        if (res.status === 429) throw new Error("Too many requests.");
         throw new Error("Chat error.");
       }
 
