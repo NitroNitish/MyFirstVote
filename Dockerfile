@@ -24,6 +24,8 @@ WORKDIR /app
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
+# srvx serves static files from 'public' directory by default
+RUN cp -r dist/client public
 
 # Cloud Run uses PORT env variable
 ENV PORT=8080
