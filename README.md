@@ -239,6 +239,7 @@ VITE_OPENROUTER_API_KEY=your_openrouter_api_key
 | **Stitch (StitchMCP)** | Facilitated high-fidelity UI design and component prototyping, ensuring a world-class user experience. |
 | **Google Translate** | Provides instant multilingual accessibility, ensuring every citizen can learn in their native language. |
 | **Google Calendar** | Enables users to set one-click reminders for election day, increasing voter turnout through timely notifications. |
+| **Google Maps** | Provides integrated polling booth location services, helping users find their designated voting stations with ease. |
 
 ---
 
@@ -254,6 +255,7 @@ This project is built from the ground up to leverage the full power of the Googl
 - **Google AI Studio**: Primary prototyping environment for prompt engineering and model optimization.
 - **Google Translate**: Dynamic i18n layer providing site-wide accessibility in native Indian languages.
 - **Google Calendar**: Integrated "Sync to Calendar" feature for election day reminders and civic participation.
+- **Google Maps**: Polling booth locator service to help voters navigate to their assigned voting stations.
 - **Google Fonts**: Leveraging modern typography (Inter, Outfit) for a premium reading experience.
 
 ---
@@ -334,7 +336,6 @@ vote-ready-india/
 
 - [ ] **State-specific election data** (dynamic candidate lists based on user's state)
 - [ ] **Voter registration status checker** (via ECI API integration)
-- [ ] **Polling booth finder** (Google Maps integration)
 - [ ] **WhatsApp chatbot** for voters without smartphone access
 - [ ] **Progressive Web App** (installable, full offline support)
 

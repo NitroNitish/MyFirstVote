@@ -217,7 +217,7 @@ function CertPage() {
           <h3 className="font-display font-bold text-navy">🎯 What's Next?</h3>
           <ul className="mt-3 space-y-2 text-sm">
             <li>✓ Register to vote at <a className="text-sky underline" href="https://voters.eci.gov.in" target="_blank" rel="noreferrer">voters.eci.gov.in</a></li>
-            <li>✓ Find your polling booth at <a className="text-sky underline" href="https://www.nvsp.in" target="_blank" rel="noreferrer">nvsp.in</a></li>
+            <li>✓ Find your polling booth at <a className="text-sky underline" href="https://www.google.com/maps/search/polling+booth+near+me" target="_blank" rel="noreferrer">Google Maps</a></li>
             <li>✓ Mark election day on your calendar</li>
             <li>✓ Share MyFirstVote with friends — help others learn too!</li>
           </ul>
